@@ -1,0 +1,14 @@
+@import "./partials/vars";
+@import "./partials/colors";
+
+@import "./components/_myComponent";
+
+// Layouts
+@import "./layouts/index";
+
+html,
+body {
+    overflow-x: hidden;
+    font-size: 1rem;
+    background-color: #000;
+}

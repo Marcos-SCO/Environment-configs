@@ -1,0 +1,70 @@
+%mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+%prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+%container {
+    width: 85%;
+    max-width: 1250px;
+}
+
+// mixin responsividade
+@mixin cellphone {
+    @media (min-width: #{$cellphone-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin desktop-xl {
+    @media (min-width: #{$desktop-xl-width}) {
+        @content;
+    }
+}
+
+@mixin desktop-2xl {
+    @media (min-width: #{$desktop-2xl-width}) {
+        @content;
+    }
+}
+
+@function text($bg) {
+    @if (lightness($bg) > 50) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
+@mixin dc($color) {
+    background: $color;
+    color: text($color);
+}
+
+$cellphone-width: 640px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$desktop-xl-width: 1250px;
+$desktop-2xl-width: 1586px;
